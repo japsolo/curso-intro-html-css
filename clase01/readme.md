@@ -26,8 +26,8 @@
 
 ---
 
-### Qué es HTML
 <a name="html"></a>
+### Qué es HTML
 
 Lo primero que necesitamos saber es que HTML **no es un lenguaje de programación**. Lo que quizás nos deja con una enorme duda de: **Y entonces ¿qué es HTML?**. Bien, para responder a esta pregunta, podemos decir que HTML es un lenguaje de marcado de hipertexto (en inglés _Hyper Text Markup Language_).
 
@@ -56,8 +56,8 @@ Más claro ahora ¿no?. Ahora si, con esta pequeña introducción, estamos listo
 
 ---
 
-### Concepto de etiqueta
 <a name="etiquetas"></a>
+### Concepto de etiqueta
 
 Una vez habiendo entendido de primera mano qué es HTML, ahora podemos adentrarnos en uno de sus conceptos más clave: **las etiquetas**.
 
@@ -83,8 +83,8 @@ Como podemos ver, **una etiqueta está compuesta por dos partes**, _la etiqueta 
 
 ---
 
-### Concepto de elemento
 <a name="elemento"></a>
+### Concepto de elemento
 
 El concepto de elemento es el más sencillo de todos. Pues basta con ver la siguiente imagen para entenderlo en su totalidad.
 
