@@ -6,8 +6,8 @@
 + [Qué es HTML](#html)
 + [Concepto de Etiqueta](#etiquetas)
 + [Concepto de Elemento](#elemento)
-+ [Estructura básica de un documento HTML](#estructura)
 + [Concepto de atributo](#atributos)
++ [Estructura básica de un documento HTML](#estructura)
 + [Etiquetas](#etiquetas)
 	+ [Encabezados](#headers)
 	+ [Párrafos](#p)
@@ -23,6 +23,7 @@
 	+ [Locales](#locales)
 	+ [De otro tipo](#otros)
 + [Imágenes](#imagenes)
++ [Ejercicio Integrador](#integrador)
 
 ---
 
@@ -69,7 +70,7 @@ Lógicamente, como en cualquier lenguaje, existe una manera correcta de escribir
 
 ![alt text](./images/img_03.jpg "sintaxis etiquetas html")
 
-Como podemos ver, **una etiqueta está compuesta por dos partes**, _la etiqueta de apertura_ y la _etiqueta de clausura_. Las cuales tienen algo en particular y es el uso de los símbolos `<` y `>`. Así mismo las dos partes, dentro de los símbolos `<` y `>` llevan el nombre de la etiqueta que deseamos usar. Adicionalmente la _etiqueta de clausura_ lleva el símbolo `\` antes del nombre de la etiqueta. Un ejemplo de varias etiquetas sería:
+Como podemos ver, **una etiqueta está compuesta por dos partes**, _la etiqueta de apertura_ y la _etiqueta de clausura_. Las cuales tienen algo en particular y es el uso de los símbolos `<` y `>`. Así mismo las dos partes, dentro de los símbolos `<` y `>` llevan el nombre de la etiqueta que deseamos usar. Adicionalmente la _etiqueta de clausura_ lleva el símbolo `/` antes del nombre de la etiqueta. Un ejemplo de varias etiquetas sería:
 
 ```html
 <h1>Título principal</h1>
@@ -91,6 +92,10 @@ El concepto de elemento es el más sencillo de todos. Pues basta con ver la sigu
 ![alt text](./images/img_04.jpg)
 
 Cómo podemos ver, **un elemento** no es otra cosa más que **una etiqueta y su contenido interno**. Obviamente, las etiquetas podrían tener a su vez **atributos**, pero ese es un concepto que ahondaremos más adelante.
+
+[![alt text](./images/img-up.png "subir") volver a la tabla de contenido](#top)
+
+---
 
 
 <!-- Mini proyecto: hacer una página simple y subirla a Bitballoon -->
