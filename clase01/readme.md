@@ -6,15 +6,14 @@
 + [Qué es HTML](#html)
 + [Concepto de Etiqueta](#etiquetas)
 + [Concepto de Elemento](#elemento)
-+ [Concepto de atributo](#atributos)
++ [Concepto de atributo](#atributo)
 + [Estructura básica de un documento HTML](#estructura)
 + [Etiquetas](#etiquetas)
 	+ [Encabezados](#headers)
 	+ [Párrafos](#p)
-	+ [Salto de línea](#br)
 	+ [Listas ordenadas](#ol)
 	+ [Listas desordenadas](#ul)
-+ [URL's](#urls)
++ [Rutas](#rutas)
 	+ [Relativas](#relativas)
 	+ [Absolutas](#absolutas)
 + [Enlaces](#anchors)
@@ -97,6 +96,222 @@ Cómo podemos ver, **un elemento** no es otra cosa más que **una etiqueta y su 
 
 ---
 
+<a name="atributo"></a>
+### Concepto de atributo
+
+Bastante bien hasta el momento ¿no? Como nos damos cuenta, paso a paso vamos construyendo los conceptos clave para comprender en contexto todo el lenguaje HTML.
+
+Ahora, veamos algo sencillo, el concepto de **atributo**. Basicamente podemos definir que un atributo, es: _"la parte de una etiqueta que nos permite modificar o asignar alguna característica en particular"_. Veamos un ejemplo:
+
+![alt text](./images/img_05.jpg "atributos en html")
+
+Como lo podemos ver en la imagen anterior, un **atributo**, como primera medida **siempre se escribe dentro de la etiqueta de apertura** y generalmente **está compuesto de 2 partes**.
+
+La primer parte, es el atributo en si, el cual va acompañado del signo `=` y la segunda parte es el valor, la cual va siempre dentro de `""`.
+
+En la imagen se ve el atributo `align` cuyo valor es `center`. Pensemos un momento en ¿qué está haciendo este atributo? ¿Se te ocurre algo?. Fácil ¿no?, tal como quizá lo está pensando. Dicho atributo da una alineación al texto que esté dentro del elemento `h1`, en este caso particular, está alineando su contenido al centro.
+
+Atributos hay muchos. E incluso, se pueden usar varios a la vez dentro de un mismo elemento. Veamos unos sencillos ejemplos:
+
+```html
+<a href="http://www.google.com" title="Vamos a Google"> Ir a Google </a>
+<img src="images/picture.jpg" alt="una imagen">
+```
+
+Como ves, muchas veces, un atributo _"habla por si sólo"_. Pues, si bien no hemos visto los elementos mencionados en el ejemplo de arriba, quizá puedas intuir qué hace cada uno de ellos.
+
+[![alt text](./images/img-up.png "subir") volver a la tabla de contenido](#top)
+
+---
+
+<a name="estructura"></a>
+### Estructura básica de un documento HTML
+
+Ya que hemos avanzado bastante, podemos ahora adentrarnos más en un concepto  bastante clave: **la estructura básica** de cualquier archivo HTML. ¿Qué significa esto? Literalmente, la **estructura que siempre debe estar presente en cualquier documento HTML**.
+
+Veamos la siguiente imagen:
+
+![alt text](./images/img_06.jpg "estructura básica de un documento HTML")
+
+Como podemos darnos cuenta, la estructura básica, está compuesta de varios elementos de HTML, cada uno presente con una responsabilidad en particular, veamos para qué es cada uno de ellos:
+
++ `<DOCTYPE html>` : este elemento sirve para definir qué versión del lenguaje estamos usando. En este caso, definimos que usamos la versión `HTML5`.
++ `<html> </html>` : este elemento contiene a todos los demás elementos del documento. Sirve para especificar que todo su contenido interno debe ser interpretado como lenguaje HTML.
++ `<head> </head>` : este elemento contiene la información inherente al documento. Sirve para especificar entre otras cosas, la codificación de caracteres y el título de documento.
++ `<meta charset="utf-8">` : este elemento define la codificación de caracteres que deseamos usar. En este caso, una codificación que incluye cualquier caracter extraño para el navegador, como las vocales con acentos, las ñ's, las ç y cualquier caracter de "tipo" especial. La omisión de este elemento y su atributo `charset` puede generar que los caracteres mencionados se vean mal.
++ `<title> </title>` : este elemento contiene un texto que será el título del documento HTML. Este texto será visible en la pestaña del navegador.
++ `<body> </body>` : este elemento contiene a **todos** los demás elementos _"visuales"_ (textos, imágenes, videos, etc) que deseemos mostrar al usuario.
+
+[![alt text](./images/img-up.png "subir") volver a la tabla de contenido](#top)
+
+---
+
+<a name="etiquetas"></a>
+### Etiquetas
+
+Veamos ahora un par de etiquetas/elementos que nos serviran para generar distintos tipos de contenido de texto.
+
+<br>
+
+<a name="headers"></a>
+#### Encabezados
+
+Los encabezados o titulares, nos sirven para generar distintos tipos de títulos/subtítulos. Las etiquetas de encabezados son 6:
+
+```html
+<h1>Encabezado de 1er nivel</h1>
+<h2>Encabezado de 2do nivel</h2>
+<h3>Encabezado de 3er nivel</h3>
+<h4>Encabezado de 4to nivel</h4>
+<h5>Encabezado de 5to nivel</h5>
+<h6>Encabezado de 6to nivel</h6>
+```
+El código anterior, al momento de ser implementado dentro del `<body>` de nuestro documento HTML se verá así:
+
+![alt text](./images/img_07.jpg "encabezados HTML")
+
+Como ves. Cada `<h_>` genera un elemento que visualmente se ve distinto. Pues cambia el tamaño de la tipografía según el elemento que deseemos usar. Cabe aclarar que **estos elementos los podemos usar en el orden que deseemos** dentro de nuestro documento HTML. No tienen que ir en este orden estricto.
+
+[![alt text](./images/img-up.png "subir") volver a la tabla de contenido](#top)
+
+<br>
+
+<a name="p"></a>
+#### Párrafos
+
+Los párrafos son unos de los elementos más comunes, junto con los encabezados, que usamos con mucha regularidad. Los mismos se generar así:
+
+```html
+<p>Un bloque de texto. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+```
+
+El código anterior, al momento de ser implementado dentro del `<body>` de nuestro documento HTML se verá así:
+
+![alt text](./images/img_08.jpg "párrafos HTML")
+
+Cómo es lógico y al igual que con los [encabezados](#headers), podemos usar cuantas veces necesitemos, la etiqueta `<p>`, pues como vimos anteriormente, la misma nos permite generar bloques de texto a _piacere_.
+
+[![alt text](./images/img-up.png "subir") volver a la tabla de contenido](#top)
+
+<br>
+
+<a name="ol"></a>
+#### Listas ordenadas
+
+La lista ordenada, es la etiqueta que nos permite generar, tal como su nombre lo indica, un listado de cosas que serán rotuladas por una viñeta/bullet la cual tendrá un aumento progresivo.
+
+Generalmente la lista ordenada (y también la desordenada) usa dos tipos de etiqueta, la etiqueta de lista, para este caso `<ol>` y la etiqueta de _elemento de lista_ `<li>`. Veamos el código:
+
+```html
+<ol>
+	<li>Elemento de lista</li>
+	<li>Elemento de lista</li>
+	<li>Elemento de lista</li>
+	<li>Elemento de lista</li>
+</ol>
+```
+
+El código anterior, en nuestro navegador se vería así:
+
+![alt text](./images/img_09.jpg "listas ordenadas de HTML")
+
+Como vemos, este tipo de lista ya tiene implementado un tipo de viñeta/bullet, en este caso numérico. El cual es auto incremental, pues a medida que vamos insertando elementos `<li>` la viñeta/bullet va aumentando.
+
+**A tener en cuenta**: `<ol>` significa _Ordered List_ y `<li>` _List Item_.
+
+[![alt text](./images/img-up.png "subir") volver a la tabla de contenido](#top)
+
+<br>
+
+<a name="ul"></a>
+#### Listas desordenadas
+
+La lista desordenada, no dista mucho de la [lista ordenada](#ol), pues básicamente tiene la misma estructura, lo único que cambia es el tipo de etiqueta que contiene a los elementos de lista `<li>`. Veamos el código:
+
+```html
+<ul>
+	<li>Elemento de lista</li>
+	<li>Elemento de lista</li>
+	<li>Elemento de lista</li>
+	<li>Elemento de lista</li>
+</ul>
+```
+
+El código anterior, en el navegador se vería así:
+
+![alt text](./images/img_10.jpg "listas desordenadas de HTML")
+
+Al igual que en la [lista ordenada](#ol), en la lista desordenada se va generando una viñeta/bullet. Sin embargo aquí no es auto incremental, por lo general será un `•`.
+
+**A tener en cuenta**: `<ul>` significa _Unordered List_.
+
+[![alt text](./images/img-up.png "subir") volver a la tabla de contenido](#top)
+
+---
+
+<a name="rutas"></a>
+### Rutas
+
+Las rutas, dentro de un documento de HTML, nos sirven para **especificar donde se encuentra un determinado recurso**. Por ejemplo, si quisieramos invocar una imagen dentro del documento HTML, tendríamos que usar la etiqueta de imagen (`<img>`) e indicarle a la misma la **ruta de ubicación** en donde puede hayar el archivo de imagen que queremos se vea en el navegador.
+
+Sin embargo, la imagen, no es el único elemento de HTML que usa las **rutas**. Existen otros elementos más que también usan rutas para buscar recursos específicos. Esos elementos los veremos más adelante.
+
+Ahora bien, al hablar de rutas (también conocidas como **path's**) nos encontramos con 2 tipos. Las [rutas relativas](#relativas) y la [rutas absolutas](#absolutas). Veamos como funciona cada una de ellas.
+
+<br>
+
+<a name="relativas"></a>
+#### Rutas relativas
+
+Las **rutas relativas** están relacionadas con la ubicación actual en la que se encuentra un documento HTML. Si tuvieramos la siguiente arquitectura de archivos en nuestra computadora:
+
+```
+.
+├── index.html          #archivo HTML
+├── images              #folder de imágenes
+│   ├── gatito.jpg      #archivo JPG
+│   └── perrito.png     #archivo PNG
+└── ...
+```
+
+Entendiendo que todos estos archivos se encuentran dentro de un mismo folder. Si quisieramos poder acceder desde el `index.html` al archivo `perrito.png` tendríamos que implementar (en la etiqueta `img`) la **ruta relativa**:
+
+```
+images/perrito.png
+```
+
+¿Así de sencillo?. Rotundo SI. Pues al estar estos archivos dentro de un mismo folder _"padre"_, solamente necesitamos especificar desde ese punto de partida, el camino que `index.html` tiene que recorrer para llegar a `perrito.jpg`. Muy fácil ¿no te parece?.
+
+**A tener en cuenta**: en HTML **nunca** utilizaremos rutas que hagan referencia al disco duro de nuestra computadora, algo tipo `C:/Mis Documentos/Mi Folder/mi_archivo.ext` no funciona bien.
+
+[![alt text](./images/img-up.png "subir") volver a la tabla de contenido](#top)
+
+<br>
+
+<a name="absolutas"></a>
+#### Rutas absolutas
+
+Las **rutas absolutas** a diferencia de las relativas, necesitan toda la información en donde está ubicado un recurso. Por generalidad y construcción del lenguaje HTML. Las únicas **rutas absolutas** permitidas son las que comienzan con `http://`, es decir, aquellas que _"viven"_ en un servidor web.
+
+Veamos algunos ejemplos:
+
+```
+https://www.youtube.com/results?search_query=michael&jackson
+```
+
+La anterior **ruta absoluta** al ser implementada en una etiqueta de enlace, nos llevaría al sitio web de youtube, a la sección de resultados de busqueda del artista Michael Jackson.
+
+Si por otro lado, tuviésemos la siguiente ruta:
+
+```
+https://es.wikipedia.org/wiki/Michael_Jackson#/media/File:Michael_Jackson_in_1988.jpg
+```
+
+La misma, al ser implementada en una etiqueta de imagen, nos mostraría el archivo `Michael_Jackson_in_1988.jpg` que _"vive"_ o se _"aloja"_ en los servidores de [wikipedia](https://es.wikipedia.org/).
+
+[![alt text](./images/img-up.png "subir") volver a la tabla de contenido](#top)
+
+---
 
 <!-- Mini proyecto: hacer una página simple y subirla a Bitballoon -->
 
