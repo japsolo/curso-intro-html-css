@@ -18,9 +18,8 @@
 	+ [Absolutas](#absolutas)
 + [Enlaces](#anchors)
 	+ [Externos](#externos)
-	+ [Internos](#internos)
 	+ [Locales](#locales)
-	+ [De otro tipo](#otros)
+	+ [Internos](#internos)
 + [Imágenes](#imagenes)
 + [Ejercicio Integrador](#integrador)
 
@@ -312,6 +311,110 @@ La misma, al ser implementada en una etiqueta de imagen, nos mostraría el archi
 [![alt text](./images/img-up.png "subir") volver a la tabla de contenido](#top)
 
 ---
+
+<a name="anchors"></a>
+### Enlaces
+
+Muy bien, hasta el momento hemos entendido qué son las **rutas** y qué tipos existen. Y de cierta manera pudimos entender donde las podemos usar.
+
+Así que llegó el momento de introducir otra etiqueta de HTML, el `<a></a>`, la cual nos sirve para hacer enlaces o vínculos. Se llama **a** porque en inglés es llamada *anchor* .
+
+Pero ¿para qué sirven los enlaces?. Los enlaces, nos sirven, tal como su nombre lo indica, para enlazar, conectar, vincular, distintos archivos HTML entre si. Incluso también para ir a un sitio web distinto al nuestro e inclusive para ver archivos de tipo imagen, pdf, .zip, etc. Y como la algunos de los conceptos que hasta el momento hemos visto. Los enlaces existen en distintos tipos.
+
+<br>
+
+<a name="externos"></a>
+#### Enlaces externos
+
+Los **enlaces externos** son aquellos que nos permiten visitar un documento html ajeno a nuestro propio sistema de archivos. Ejemplo: si quisieramos un enlace que desde nuestro HTML nos lleve a Facebook o Twitter, a eso se le denomina un enlace externo. Ahora bien ¿cómo lo podemos generar?. De la siguiente manera:
+
+```html
+<a href="http://www.twitter.com" target="_blank">Sígueme en Twitter</a>
+<a href="http://www.facebook.com" target="_blank">Visita mi Fanpage</a>
+```
+
+Como vemos en el anterior ejemplo, la etiqueta `<a>` lleva dos atributos. Uno es el `href` en el cual se especifica la [ruta](#rutas) (en este caso una [ruta absoluta](#absolutas)) a donde queremos que el usuario se dirigido al hacer clic. Y el otro es el `target` el cual define en qué pestaña de nuestro navegador se va a abrir ese recurso. `_blank` significa abrir el recurso en una pestaña nueva.
+
+<br>
+
+<a name="locales"></a>
+#### Enlaces locales
+
+Ahora bien, los **enlaces locales** son aquellos que nos permiten visitar un documento HTML o un recurso propio de nuestros sistema de archivos. Por ejemplo, si quisieramos ir desde el `index.html` al `quienes-somos.html`, usaremos un enlace local. Veamos un ejemplo:
+
+```html
+<a href="index.html">Volver al HOME</a>
+<a href="quienes-somos.html">Acerca de NOSOTROS</a>
+```
+
+En el ejemplo anterior, solo necesitamos especificar la [ruta](#rutas) (en este caso [ruta relativa](#relativas)) del recurso que deseamos enlazar. Y aquí, no es necesario el atributo `target`, pues de no especificarlo, el recurso se abrirá en la pestaña actual de nuestro navegador.
+
+<br>
+
+<a name="internos"></a>
+#### Enlaces internos
+
+Los **enlaces internos** a diferencia de los dos anteriores, nos sirven para poder recorrer distintos lugares dentro de un mismo documento HTML. El ejemplo más claro de este tipo de enlaces es [Wikipedia](http://es.wikipedia.org/). Podríamos decir que este tipo de enlace, funciona como una especie de *ascensor*, que nos lleva para arriba o para abajo, según corresponda. Pensemos que estamos en la sección *MENU / CARTA* de un restaurante y que tenemos varias opciones:
+
+```html
+<a href="#entradas">Entradas</a>
+<a href="#platos-fuertes">Platos Fuertes</a>
+<a href="#para-compartir">Para compartir</a>
+<a href="#bebidas">Bebidas</a>
+<a href="#postres">Postres</a>
+```
+
+Como lo vemos, en el atributo `href` todos los valores comienza con el símbolo `#`. Lo cual indica que ese *"lugar"* se encuentra dentro de ese mismo documento HTML en el cual nos encontramos. Sin embargo para que esto funcione perfectamente, necesitaremos crear un punto de referencia dentro del documento para que al dar clic sobre el enlace, el mismo sepa exactamente a donde queremos ir. Estos puntos de referencia se generan con el atributo `id`.
+
+```html
+<a href="#entradas">Entradas</a>
+<a href="#platos-fuertes">Platos Fuertes</a>
+
+<h2 id="entradas">Entradas</h2>
+<p>Descripción y contenido de este apartado de información</p>
+
+<h2 id="platos-fuertes">Platos Fuertes</h2>
+<p>Descripción y contenido de este apartado de información</p>
+```
+
+Es importante remarcar que el atributo `id` puede ser aplicado en cualquier etiqueta y a su vez debemos entender que el valor que definamos dentro del mismo **NO** se puede repetir, pues de hacerlo, tendriamos dos puntos de referencia con mismo nombre y el enlace no sabría a cual de los dos ir.
+
+[![alt text](./images/img-up.png "subir") volver a la tabla de contenido](#top)
+
+---
+
+<a name="imagenes"></a>
+### Imágenes
+
+Las imágenes, son uno de los recursos más utilizados al momento de elaborar documentos HTML, pues las mismas le dan "vida" a nuestros proyectos y hacen de los mismos algo, visualmente más amigable.
+
+Para trabajar con imágenes, vamos a usar la etiqueta `<img>`, la cual es una etiqueta con *auto closing* que basicamente significa que se cierra a si misma, es decir, **NO** vamos a necesitar algo tipo `</img>`, es más, eso no existe.
+
+Otra cosa que debemos tener en cuenta, es que las imágenes son invocadas, pero ¿qué significa esto?. Basicamente que siempre que implementemos una imagen en un documento HTML, necesitamos su referencia exacta en nuestra estructura de archivos. En otras palabras, vamos a necesitar que esas imágenes que deseemos implementar *"vivan"* dentro del mismo folder en donde tenemos nuestros archivos HTML. Algo así:
+
+```
+.
+├── index.html                #archivo HTML
+├── quienes-somos.html        #archivo HTML
+├── contacto.html             #archivo HTML
+├── images                    #folder de imágenes
+│   ├── nosotros.jpg          #archivo de imagen
+│   ├── banner-01.jpg         #archivo de imagen
+│   └── icono-contacto.png    #archivo de imagen
+└── ...
+```
+
+Por lo tanto si quisieramos implementar alguna de estas imágenes en cualquiera de nuestros documentos HTML haríamos lo siguiente:
+
+```html
+<img src="images/nosotros.jpg" alt="nuestro equipo de trabajo">
+<img src="images/icono-contacto.jpg" alt="ícono de un sobre de correo">
+```
+
+Como vemos en el ejemplo anterior, la etiqueta `<img>` está usando dos atributos: `src` y `alt`. El primero (`src`: source u origen), podemos deducir que hace referencia a la ubicación en donde se encuentra el archivo de imagen. Esta bueno aclarar que esta [ruta](#rutas) puede ser [relativa](#relativas) o [ absoluta](#absolutas). Y el segundo (`alt`: texto alternativo) se utiliza para describir de manera breve pero explicita a qué hace referencia la imagen. El valor asignado en este atributo es **obligatorio** y se mostrará en dado caso que la imagen no haya podido cargarse.
+
+[![alt text](./images/img-up.png "subir") volver a la tabla de contenido](#top)
+
 
 <!-- Mini proyecto: hacer una página simple y subirla a Bitballoon -->
 
