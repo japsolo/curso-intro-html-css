@@ -1,4 +1,4 @@
-# Clase I - Etiquetas contenedoras y Formularios de HTML
+# Clase II - Etiquetas contenedoras y Formularios de HTML
 <a name="top"></a>
 
 ### Tabla de contenido
