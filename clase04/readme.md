@@ -501,3 +501,84 @@ Otro efecto que podríamos lograr es un círculo perfecto, esto siempre y cuando
 Maravilloso, ¿no te parece?.
 
 [![alt text](./images/img-up.png "subir") volver a la tabla de contenido](#top)
+
+---
+
+<a name="pos"></a>
+### Posicionamiento
+
+Cuando hablamos de posicionamiento en CSS, nos referimos a la manera en que podemos disponer los elementos de nuestros HTML para que entre ellos exista una fluidez y así mismo podamos generar *layouts* de cualquier tipo. Como por ejemplo:
+
+![alt text](./images/img15.jpg 'web layout')
+
+En la anterior imagen podemos ver que algunos elementos se posicionan junto a otros de una manera particular y hasta el momento desconocida para nosotros. Pues bien, las siguiente propiedades buscan que podamos lograr resultados similares a los que nos ilustra la imagen. Veámoslos entonces.
+
+<br>
+
+<a name="flo"></a>
+#### float
+
+EL posicionamiento por flotación es uno de los más utilizados, pues no permite hacer que un elemento se posicione justo al lado de otro elemento. La propiedad usada es `float` y recibe uno de los siguientes 3 valores: `none` (default), `left`, `right`. Si entendemos que por default, los elementos *de bloque* se posicionan uno debajo del otro:
+
+![alt text](./images/img16.jpg 'posicionamiento default')
+
+Podríamos entonces hacer que los mismos se ubicaran justo uno al lado del otro aplicando la flotación en los tres elementos así:
+
+```css
+float: left;
+```
+
+Y nuestro resultado sería el siguiente:
+
+![alt text](./images/img17.jpg 'posicionamiento flotante')
+
+Ahora bien, ¿qué sucedería si a alguna de las 3 cajas aplicaramos `float: right;`? Veamos:
+
+![alt text](./images/img18.jpg 'posicionamiento flotante')
+
+Como vemos, en ese escenario la caja se ubica al costado lateral derecho de su elemento contenedor. ¿Sencillo no te parece?
+
+Sin embargo, uno de los pequeños conflictos que trae consigo la flotación es que **cualquier elemento que se encuentre por debajo de un elemento flotante, asume que el flotante NO EXISTE**. Veamos:
+
+![alt text](./images/img19.jpg 'posicionamiento flotante')
+
+Como vemos, el resultado no es el que esperábamos pues la caja debajo de los elementos flotados, se ubicó por detrás de los mismos y obtenemos un solapamiento de cajas. ¿Qué podemos hacer entonces? ¿Cómo podemos solucionar esto?.
+
+Por suerte, CSS nos da otra popiedad llamada `clear`, la cual recibe el valor `both` que debe ser aplicada **EN EL ELEMENTO QUE NO FLOTA** para que el mismo, se ubique por debajo de los flotados. Veamos:
+
+![alt text](./images/img20.jpg 'posicionamiento flotante')
+
+Como vemos, el `clear` es muy importante si queremos que aquellos elementos que *NO FLOTAN* queden por debajo de aquellos que si lo hacen, para mantener el flujo habitual de nuestro layout.
+
+[![alt text](./images/img-up.png "subir") volver a la tabla de contenido](#top)
+
+<br>
+
+<a name="rel"></a>
+#### relative
+
+Este tipo de posicionamiento, nos permite desplazar un elemento desde su posición original a una nueva posición. Dicho posicionamiento se logra con la propiedad `position` y el valor `relative`. Una de las características de este tipo de posicionamiento es que cuandoe es aplicado a un elemento, cualquier otro elemento que se encuentre por debajo de éste no se ve afectado. Veamos un ejemplo:
+
+![alt text](./images/img21.jpg 'posicionamiento relativo')
+
+En la imagen anterior vemos lo que sucedería si a la caja 1 le aplicamos `position: relative;`. La línea punteada de color rojo, es una guía de la ubicación original de la caja y una muestra de lo que le sucede con los elementos que se encuentran debajo del elemento posicionado relativamente.
+
+Otra parte de código que podemos ver en la imagen, son dos propiedades nuevas: `top` y `left`, las mismas hacen parte de 4 propiedades en total (`right` y `bottom` son las otras dos) que suelen usarse para poder desplazar los elementos.
+
+En este ejemplo puntal, y en cualquier escenario donde se aplique el `position: relative`. Cuando aplicamos un valor en alguna de estas propiedades, se toma como referencia el mismo costado del elemento y desde éste se dezplaza al mismo la cantidad de `px` aplicada.
+
+[![alt text](./images/img-up.png "subir") volver a la tabla de contenido](#top)
+
+<br>
+
+<a name="abs"></a>
+#### absolute
+
+[![alt text](./images/img-up.png "subir") volver a la tabla de contenido](#top)
+
+<br>
+
+<a name="fix"></a>
+#### fixed
+
+[![alt text](./images/img-up.png "subir") volver a la tabla de contenido](#top)
