@@ -574,11 +574,29 @@ En este ejemplo puntal, y en cualquier escenario donde se aplique el `position: 
 <a name="abs"></a>
 #### absolute
 
+Con el posicionamiento absoluto, vamos a poder desplazar un elemento desde su ubicación original, hacia una nueva ubicación pero en este caso tomando como referente de movimiento los **costados del body**. Veamos un ejemplo:
+
+![alt text](./images/img22.jpg 'posicionamiento absoluto')
+
+Como lo podemos ver, la caja posicionada absolutamente, ahora busca el costado `right` y `bottom` del body y desde ahí se desplaza la cantidad indicada. Algo **importante** a tener en cuenta es que por más que la caja se encuentre dentro de un contenedor, la misma siempre buscará los costados del body a no se que su padre contenedor posea `position: relative`. Veamos:
+
+> contenedor sin `position: relative;`
+
+![alt text](./images/img23.jpg 'posicionamiento absoluto')
+
+> contenedor con `position: relative;`
+
+![alt text](./images/img24.jpg 'posicionamiento absoluto')
+
 [![alt text](./images/img-up.png "subir") volver a la tabla de contenido](#top)
 
 <br>
 
 <a name="fix"></a>
 #### fixed
+
+El posicionamiento relativo, es muy similar al posicioamiento absoluto pero con la particularidad de que tal como su nombre lo indica, donde sea que quede el elemento el mismo va a quedar *fijo* / *pegado* indistintamente que hagamos o no scroll.
+
+![alt text](./images/img25.gif 'posicionamiento fijo')
 
 [![alt text](./images/img-up.png "subir") volver a la tabla de contenido](#top)
