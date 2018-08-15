@@ -2,4 +2,4 @@
 + [Clase 2](./clase02)
 + [Clase 3](./clase03)
 + [Clase 4](./clase04)
-+ [Clase 5](./clase04)
++ [Clase 5](./clase05)
