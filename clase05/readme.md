@@ -13,7 +13,7 @@
 	+ [Vinculación (CDN vs local)](#link)
 	+ [Sistema de Grillas](#grid)
 	+ [Navbars](#nav)
-	+ [Slider](#sli)
+	+ [Carrusel](#sli)
 	+ [Componentes](#com)
 		+ [Botones](#btn)
 		+ [Badgets](#bad)
@@ -238,8 +238,43 @@ Ahora bien, cómo funciona esto en bootstrap, veamos la siguiente tabla:
 |---|:---:|:---:|:---:|:---:|
 | Prefijo de Clase | `.col-xs-` | `.col-sm-` | `.col-md-` | `.col-lg-` | 
 
-Como vemos, Bootstrap usa un juego de `classes` de css que ya vienen creada y cada 
+Como vemos, Bootstrap usa un juego de `classes` de css que ya vienen creadas y cada una de ellas se aplicará dependiendo del ancho que tenga el `viewport`. Por ejemplo, si aplicamos el siguiente juego de clases `class="col-xs-6 col-sm-3"` estamos ordenándole a un contenedor que ocupe 6 columnas (de las 12 posibles), cuando el ancho del `viewport` se encuentre por debajo de `767px` y a su vez que ocupe 3 columnas desde que el `viewport` tenga como ancho un mínimo de `768px` hacia arriba. Un ejemplo más concreto en código sería el siguiente:
 
+```html
+<div class="row">
+  <div class="col-xs-12 col-sm-6 col-md-8">.col-xs-12 .col-sm-6 .col-md-8</div>
+  <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+</div>
+<div class="row">
+  <div class="col-xs-6 col-sm-4">.col-xs-6 .col-sm-4</div>
+  <div class="col-xs-6 col-sm-4">.col-xs-6 .col-sm-4</div>
+  <div class="col-xs-6 col-sm-4">.col-xs-6 .col-sm-4</div>
+</div>
+```
+
+Lo anterior se vería en pantalla más o menos así:
+
+> Cuando el `viewport` tiene menos de 768px de ancho
+
+![alt text](./images/img06.jpg 'grid system bootstrap')
+
+> Cuando el `viewport` tiene como mínimo 768px de ancho o más
+
+![alt text](./images/img07.jpg 'grid system bootstrap')
+
+> Cuando el `viewport` tiene como mínimo 992px de ancho o más
+
+![alt text](./images/img05.jpg 'grid system bootstrap')
+
+Ahora bien, como te das cuenta, todas las `.col-` siempre van contenidas dentro de un elemento con clase `row` pues dicho elemento contenedor evita que las columnas se desborden y que nuestro *layout* se ve mal. Por ello siempre debés recordar la siguiente estructura:
+
+```html
+<div class="container">
+  <div class="row">
+    <!-- Aquí dentro van las columnas -->
+  </div>
+</div>
+```
 
 [![alt text](./images/img-up.png "subir") volver a la tabla de contenido](#top)
 
@@ -248,12 +283,114 @@ Como vemos, Bootstrap usa un juego de `classes` de css que ya vienen creada y ca
 <a name="nav"></a>
 #### Navbars
 
+Otro elemento interesante que nos provee bootstrap son las `nav-bar` o tal como su nombre lo indica, las barras de navegación. Y si, bootstrap ya tiene una solución lista para nosotros. Veamos primero el siguiente ejemplo:
+
+![alt text](./images/img07.gif 'bootstrap navbar')
+
+¡Maravilloso! ¿no es así?. Como lo vemos, bootstrap ya solucionó, no solo el tema de una barra de navegación adaptable, si no que a su vez logro hacer funcional el evento de ocultar la misma cuando el tamaño de ancho del `viewport` es inferior a los `768px`. Ahora bien ¿cómo es posible esto?. Inspeccionemos el código fuente:
+
+```html
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+
+    <!-- Logo e ícono de navegación en mobile -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNav">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Logo</a>
+    </div>
+
+    <!-- Navbar links -->
+    <div class="collapse navbar-collapse" id="myNav">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            Services<span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Service 01</a></li>
+            <li><a href="#">Service 02</a></li>
+            <li><a href="#">Service 03</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</nav>
+```
+
+Primero que todo, podemos ver que existe un elemento contenedor con las clases `navbar navbar-default`, el mismo es indispensable para generar toda la barra de navegación en si. Luego, nos encontramos con un elemento con clase `container-fluid`, el mismo genera que la barra de navegación ocupe siempre todo el ancho del `viewport`. Después tenemos en si dos bloque grandes de elementos que componen la *navbar*, por un lado tenemos al elemento con clase `navbar-header` que tiene dentro por un lado el logotipo / marca y por otro el famoso ícono de la *hamburguesa* o las tres líneas que representan un botón que al estar en una resolución de dispositivo móvil, desplegará la barra de navegación completa.
+
+Por otro lado tenemos al elemento con las clases `collapse navbar-collapse` el cual es en si los enlaces de la barra de navegación y vemos que dentro tiene un lista tradicional con los enlaces necesarios. Ahora bien, algo importante a tener en cuenta son dos cosas. La primera de ella es la conexión que existe entre el botón que despliega la barra de navegación. Si vemos el elemento con clases `navbar-toggle collapsed` vemos que el mismo tiene un atributo `data-target` con el valor `#myNav`, la segunda cosa a tener en cuenta es que el elemento con clases `collapse navbar-collapse` tiene un atributo `id` con el valor `myNav`. La conexión entre estos dos es evidente y básicamente lo que permite es que al hacer clic sobre el botón `navbar-toggle collapsed` se despliege (si está oculta) la lista de enlaces `collapse navbar-collapse`.
+
+Ahora bien, lo anteriormente mencionado no sería posible sin vincular unas librerias de **JavaScript** necesarias para el funcionamiento de este comportamiento. Lo único que tenemos que hacer en nuestro documento HTML es insertar lo siguiente:
+
+```html
+<!-- jQuery (necesaria para los plugins de JavaScript de Bootstrap's) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<!-- Para implementar las funcionalidades de los eventos y demás -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+```
+
+Realmente la implementación de este tipo de elementos que nos da la librería de bootstrap es relativamente sencilla y entre más lo practiquemos más vamos a entender su funcionamiento de una manera completa.
+
 [![alt text](./images/img-up.png "subir") volver a la tabla de contenido](#top)
 
 <br>
 
 <a name="sli"></a>
-#### Slider
+#### Carrusel
+
+Otro de los maravillosos elementos que nos da la librería de bootstrap es el **carrusel** que bien puede ser de solo imágenes o de cualquier tipo de contenido. Veamos un ejemplo:
+
+![alt text](./images/img08.gif 'bootstrap carousel')
+
+Sorprendente ¿no te parece? Pues bien, este tipo de elemento requiere también de las librerias de **JavaScript** mencionadas en las **Navbars** así que daremos por sentado que esto está entendido perfectamente, por lo que nos concentraremos en la estructura HTML. Si vemos el siguiente código:
+
+```html
+<div class="carousel slide" id="myCarousel">
+  <!-- Puntitos Indicadores -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ol>
+
+  <!-- Contenedor de cada slide -->
+  <div class="carousel-inner">
+    <div class="item active">
+      <img src="..." alt="...">
+    </div>
+    <div class="item">
+      <img src="..." alt="...">
+    </div>
+    <div class="item">
+      <img src="..." alt="...">
+    </div>
+  </div>  
+
+  <!-- Controles -->
+  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+</div>
+```
+
+En la estructura anterior claramente podemos identificar 3 elementos importantes. Los **indicadores** (`carousel-indicators`), el **contenido de cada slide** (`carousel-inner`) y los **controles** anterior / siguiente (`carousel-control`). 
+
+Algo importante a tener en cuenta es el uso de un elemento contenedor general del grupo anteriormente mencionado, dicho contenedor lleva la clase `carousel slide` y el `id="myCarousel"`. Este último bastante importante pues como te das cuenta en varios lugares (indicadores y controles) del código se hace referencia al mismo.
+
+Adicionalmente el contenido que deseamos mostrar en cada slide irá en el contenedor `carousel-inner` dentro de un sub-contenedor con clase `item`. Dentro de dicho elemento es donde iran las imágenes `<img>` de nuestro carrusel. ¿Sencillo no?.
 
 [![alt text](./images/img-up.png "subir") volver a la tabla de contenido](#top)
 
@@ -262,17 +399,104 @@ Como vemos, Bootstrap usa un juego de `classes` de css que ya vienen creada y ca
 <a name="com"></a>
 #### Componentes
 
+Dentro de todos los elementos que tiene bootstrap hay una clara sección de *componentes*, que no son otra cosa más que un set de diversos elementos estilizados que podremos usar según como lo necesitemos. A continuación veremos los más comunmente utilizados.
+
 <a name="btn"></a>
 + Botones
+
+Siempre que necesitemos de un botón para cualquier instancia de nuestra aplicación, podremos recurrir al set de botones que nos provee bootstrap, pues los mismos ya están estilizados de una manera tal en donde por medio del color otorgamos un significado a cada uno de ellos. Veamos:
+
+![alt text](./images/img08.jpg 'botones de bootstrap')
+
+Interesante ¿no es así? Ahora bien veamos los fácil que es implementar los mismos en nuestro HTML, pues lo único que necesitaremos es implementar un par de clases en cada elemento así:
+
+```html
+<!-- Botón estandard -->
+<button type="button" class="btn btn-default">Default</button>
+
+<!-- Botón de acción primaria -->
+<button type="button" class="btn btn-primary">Primary</button>
+
+<!-- Botón para indicar una acción exitosa -->
+<button type="button" class="btn btn-success">Success</button>
+
+<!-- Botón para indicar información a tener en cuenta -->
+<button type="button" class="btn btn-info">Info</button>
+
+<!-- Botón para indicar un evento sobre el cual hay que tener precaución -->
+<button type="button" class="btn btn-warning">Warning</button>
+
+<!-- Botón para indicar un evento peligroso -->
+<button type="button" class="btn btn-danger">Danger</button>
+
+<!-- Botón que parece un enlace pero cumple el papel de ser un botón -->
+<button type="button" class="btn btn-link">Link</button>
+```
+
+Adicionalmente estos botones pueden ser personalizados en tamaño ¿cómo? a través de una clase adicional que puede ser `.btn-lg`, `.btn-sm`, ó `.btn-xs`.
+
+```html
+<p>
+  <button type="button" class="btn btn-primary btn-lg">Large button</button>
+  <button type="button" class="btn btn-default btn-lg">Large button</button>
+</p>
+<p>
+  <button type="button" class="btn btn-primary">Default button</button>
+  <button type="button" class="btn btn-default">Default button</button>
+</p>
+<p>
+  <button type="button" class="btn btn-primary btn-sm">Small button</button>
+  <button type="button" class="btn btn-default btn-sm">Small button</button>
+</p>
+<p>
+  <button type="button" class="btn btn-primary btn-xs">Extra small button</button>
+  <button type="button" class="btn btn-default btn-xs">Extra small button</button>
+</p>
+```
+
+> El anterior código se vería así:
+
+![alt text](./images/img09.jpg 'botones de bootstrap')
 
 [![alt text](./images/img-up.png "subir") volver a la tabla de contenido](#top)
 
 <a name="bad"></a>
 + Badgets
 
+No hay mejor manera de explicar un `badget` que de una forma visual, así que veamos:
+
+![alt text](./images/img10.jpg 'badge de bootstrap')
+
+Quizás estés familiarizado con este tipo de recursos visual ¿no? `badge` traduce literalmente *distintivo* y básicamente es un pequeño, pero importante, elemento que nos permite notificar al usuario principalmente de una cantidad de mensajes recibidos y sin leer. La implementación es realmente sencilla pues solamente deberás hacer lo siguiente:
+
+```html
+<a href="#">Inbox <span class="badge">42</span></a>
+
+<button class="btn btn-primary">
+  Messages <span class="badge">4</span>
+</button>
+```
+
+Lo importante del código anterior es el uso de `<span class="badge">...</span>`. Pues es lo único necesario para comenzar a mostrar este tipo de alertas. Cool ¿no te parece?.
+
 [![alt text](./images/img-up.png "subir") volver a la tabla de contenido](#top)
 
 <a name="ale"></a>
 + Alerts
+
+Las alertas son otro recurso bastante sencillo de bootstrap y básicamente nos sirven para mostrar textos llamativos al usuario, veamos:
+
+![alt text](./images/img11.jpg 'alert de bootstrap')
+
+Como te das cuentas, una alerta no es otra cosa más que un bloque de texto con un color de fondo y tipografía determinados. Lo anterior, en código se ve así:
+
+```html
+<p class="alert alert-success">...</p>
+<p class="alert alert-info">...</p>
+<p class="alert alert-warning">...</p>
+<p class="alert alert-danger">...</p>
+```
+
+Es evidente que las alertas son levemente parecidas a los botones, pues dependiendo de la clase que apliquemos obtendremos un bloque de texto llamativo según el caso.
 
 [![alt text](./images/img-up.png "subir") volver a la tabla de contenido](#top)
