@@ -22,7 +22,7 @@
 	+ [Internos](#internos)
 + [Imágenes](#imagenes)
 + [Ejercicio Integrador](#integrador)
-+ [*Volver al índice principal*](../) 
++ [*Volver al índice principal*](/) 
 
 ---
 
