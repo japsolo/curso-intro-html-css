@@ -28,7 +28,7 @@
   + [background-attachment](#bga)
   + [opacity](#opa)
   + [rgba](#rgba)
-+ [*Volver al índice principal*](../) 
++ [*Volver al índice principal*](https://github.com/japsolo/curso-intro-html-css/) 
 
 ---
 

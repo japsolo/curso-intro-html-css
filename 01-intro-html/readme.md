@@ -22,7 +22,7 @@
 	+ [Internos](#internos)
 + [Imágenes](#imagenes)
 + [Ejercicio Integrador](#integrador)
-+ [*Volver al índice principal*](/) 
++ [*Volver al índice principal*](https://github.com/japsolo/curso-intro-html-css/) 
 
 ---
 

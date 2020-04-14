@@ -18,7 +18,7 @@
 		+ [Botones](#btn)
 		+ [Badgets](#bad)
 		+ [Alerts](#ale)
-+ [*Volver al índice principal*](../) 
++ [*Volver al índice principal*](https://github.com/japsolo/curso-intro-html-css/) 
 
 ---
 

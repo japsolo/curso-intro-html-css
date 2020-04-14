@@ -25,7 +25,7 @@
   + [relative](#rel)
   + [absolute](#abs)
   + [fixed](#fix)
-+ [*Volver al índice principal*](../) 
++ [*Volver al índice principal*](https://github.com/japsolo/curso-intro-html-css/) 
 
 ---
 
