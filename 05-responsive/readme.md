@@ -1,4 +1,4 @@
-# Clase V - Responsive Web Development - Mediaqueries y Frameworks
+# Capítulo V - Responsive Web Development - Mediaqueries y Frameworks
 
 <a name="top"></a>
 
@@ -18,6 +18,7 @@
 		+ [Botones](#btn)
 		+ [Badgets](#bad)
 		+ [Alerts](#ale)
++ [*Volver al índice principal*](../) 
 
 ---
 
@@ -500,3 +501,13 @@ Como te das cuentas, una alerta no es otra cosa más que un bloque de texto con 
 Es evidente que las alertas son levemente parecidas a los botones, pues dependiendo de la clase que apliquemos obtendremos un bloque de texto llamativo según el caso.
 
 [![alt text](./images/img-up.png "subir") volver a la tabla de contenido](#top)
+
+---
+
+**Made with ❤️ by: [Javi Herrera](https://javier-herrera.com)**
+
+*Si te parece interesante este tipo de contenido, puedes agradecerme con un Follow en mis siguientes redes sociales. Lo estimaría un montón.*
+
+[![icon linkedin](../images/icon-linkedin.png)](https://www.linkedin.com/in/japsolo/)
+[![icon instagram](../images/icon-instagram.png)](https://www.instagram.com/thefullstackdevs/)
+[![icon spotify](../images/icon-spotify.png)](https://open.spotify.com/show/3J2dLuBSfzt9VVnEF8q18a)

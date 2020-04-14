@@ -1,4 +1,4 @@
-# Clase III - Introducción a CSS - Tipografías, Fondos y Selectores
+# Capítulo III - Introducción a CSS - Tipografías, Fondos y Selectores
 <a name="top"></a>
 
 ### Tabla de contenido
@@ -28,6 +28,7 @@
   + [background-attachment](#bga)
   + [opacity](#opa)
   + [rgba](#rgba)
++ [*Volver al índice principal*](../) 
 
 ---
 
@@ -38,7 +39,7 @@ Ya que hemos llegado relativamente lejos, es el momento de incursionar en el mun
 
 CSS, son las siglas que hacen referencia a **Cascading Style Sheet** o en castellano **Hoja de Estilo en Cascada**. Termino acuñado para definir el lenguaje que hace que el HTML sea visualmente *atractivo*. Pues como hemos visto hasta el momento, el propio lenguaje HTML carece de características visuales innatas, pues se concentra más en la generación de contenido.
 
-CSS es muy importante, pues le da a nuestra estructura de contenido HTML una presentación estética y elegante. En la siguiente imagen podemos ver lo como se visualiza un website CON y SIN CSS.
+CSS es muy importante, pues le da a nuestra estructura de contenido HTML una presentación estética y elegante. En la siguiente imagen podemos ver lo como se visualiza un sitio web CON y SIN CSS.
 
 ![alt text](./images/img01.jpg "website con y sin css")
 
@@ -89,13 +90,13 @@ Va tomando más sentido ¿no?
 
 Ahora que ya hemos entendido que es CSS y cómo está compuesto, podemos adentrarnos en las **3 formas** que existen para vincular nuestro CSS con nuestros documentos HTML.
 
-+ [Vinculación Externa](#vinculacion-externa)
-+ [Vinculación Interna](#vinculacion-interna)
-+ [Vinculación En Línea](#vinculacion-en-linea)
++ [Vinculación Externa](#externa)
++ [Vinculación Interna](#interna)
++ [Vinculación En Línea](#enLinea)
 
 <br>
 
-#### Vinculación externa
+#### Vinculación externa <a name="externa"></a>
 
 Este método de vinculación es el más utilizado y se trata de crear una única **hoja de estilo** que guarde todas las reglas de CSS que vamos a aplicar a nuestro(s) documento(s) HTML.
 
@@ -119,7 +120,7 @@ Como lo vemos. La etiqueta `<link>` tiene 2 atributos `href=""` que tendrá como
 
 <br>
 
-#### Vinculación Interna
+#### Vinculación Interna <a name="interna"></a>
 
 Otra manera de asignar CSS a nuestro documento HTML, es a través de la **vinculación interna**, que no es otra cosa más que generar todas nuestras reglas de estilo DENTRO del mismo documento HTML a través de la etiqueta `<style>` la cual va dentro de las etiquetas `<head>` del documento. Veamos un ejemplo:
 
@@ -137,7 +138,7 @@ Quizás a esta altura te estés preguntando, ¿cual es la real diferencia entra 
 
 <br>
 
-#### Vinculación en línea
+#### Vinculación en línea <a name="enLinea"></a>
 
 Esta técnica de vinculación se basa en aplicar declaraciones de CSS (**NO REGLAS**) a los elementos de HTML dentro de sus etiquetas de apertura a través del atributo `style=""`. Veamos como:
 
@@ -597,3 +598,13 @@ color: rgba(0, 0, 255, 0.35); /* color tipográfico AZUL con un 65% de transpare
 ```
 
 [![alt text](./images/img-up.png "subir") volver a la tabla de contenido](#top)
+
+---
+
+**Made with ❤️ by: [Javi Herrera](https://javier-herrera.com)**
+
+*Si te parece interesante este tipo de contenido, puedes agradecerme con un Follow en mis siguientes redes sociales. Lo estimaría un montón.*
+
+[![icon linkedin](../images/icon-linkedin.png)](https://www.linkedin.com/in/japsolo/)
+[![icon instagram](../images/icon-instagram.png)](https://www.instagram.com/thefullstackdevs/)
+[![icon spotify](../images/icon-spotify.png)](https://open.spotify.com/show/3J2dLuBSfzt9VVnEF8q18a)

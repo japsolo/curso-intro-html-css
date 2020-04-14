@@ -1,4 +1,4 @@
-# Clase I - Introducción a HTML
+# Capítulo I - Introducción a HTML
 <a name="top"></a>
 
 ### Tabla de contenido
@@ -22,6 +22,7 @@
 	+ [Internos](#internos)
 + [Imágenes](#imagenes)
 + [Ejercicio Integrador](#integrador)
++ [*Volver al índice principal*](../) 
 
 ---
 
@@ -40,11 +41,11 @@ Sobre Tim, debemos saber también que es conocido como el padre de la web, funda
 
 Ahora bien, pasando un poco más a lo técnico. HTML es un lenguaje que es interpretado por el navegador para mostrar los sitios web tal y como estamos acostumbrados. En la siguiente imagen podemos ver un sitio web como generalmente estamos habituados.
 
-![alt text](./images/img_01.jpg "Sitio web Plataforma 5")
+![alt text](./images/img_01.jpg "Sitio web Facebook")
 
 Pero _"tras bambalinas"_ lo que realmente está sucediendo es esto:
 
-![alt text](./images/img_02.jpg "Sitio web Plataforma 5")
+![alt text](./images/img_02.png "Sitio web Facebook")
 _Vos por tu cuenta podés ver este código también en cualquier sitio web, basta con que pulsés el click derecho del mouse y elijás la opción **ver codigo fuente**_
 
 Como te das cuenta, lo visual, está compuesto por código HTML, por etiquetas (elementos), contenido y atributos. En algunas palabras podríamos decir que el HTML es el ADN de cualquier sitio web.
@@ -419,3 +420,13 @@ Como vemos en el ejemplo anterior, la etiqueta `<img>` está usando dos atributo
 <!-- Mini proyecto: hacer una página simple y subirla a Bitballoon -->
 
 <!-- [subir](#top) -->
+
+---
+
+**Made with ❤️ by: [Javi Herrera](https://javier-herrera.com)**
+
+*Si te parece interesante este tipo de contenido, puedes agradecerme con un Follow en mis siguientes redes sociales. Lo estimaría un montón.*
+
+[![icon linkedin](../images/icon-linkedin.png)](https://www.linkedin.com/in/japsolo/)
+[![icon instagram](../images/icon-instagram.png)](https://www.instagram.com/thefullstackdevs/)
+[![icon spotify](../images/icon-spotify.png)](https://open.spotify.com/show/3J2dLuBSfzt9VVnEF8q18a)

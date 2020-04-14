@@ -1,4 +1,4 @@
-# Clase IV - Selectores avanzados, Modelo de cajas y Posicionamiento 
+# Capítulo IV - Selectores avanzados, Modelo de cajas y Posicionamiento 
 <a name="top"></a>
 
 ### Tabla de contenido
@@ -25,6 +25,7 @@
   + [relative](#rel)
   + [absolute](#abs)
   + [fixed](#fix)
++ [*Volver al índice principal*](../) 
 
 ---
 
@@ -600,3 +601,13 @@ El posicionamiento relativo, es muy similar al posicioamiento absoluto pero con 
 ![alt text](./images/img25.gif 'posicionamiento fijo')
 
 [![alt text](./images/img-up.png "subir") volver a la tabla de contenido](#top)
+
+---
+
+**Made with ❤️ by: [Javi Herrera](https://javier-herrera.com)**
+
+*Si te parece interesante este tipo de contenido, puedes agradecerme con un Follow en mis siguientes redes sociales. Lo estimaría un montón.*
+
+[![icon linkedin](../images/icon-linkedin.png)](https://www.linkedin.com/in/japsolo/)
+[![icon instagram](../images/icon-instagram.png)](https://www.instagram.com/thefullstackdevs/)
+[![icon spotify](../images/icon-spotify.png)](https://open.spotify.com/show/3J2dLuBSfzt9VVnEF8q18a)

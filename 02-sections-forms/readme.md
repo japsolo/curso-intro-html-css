@@ -1,4 +1,4 @@
-# Clase II - Etiquetas contenedoras y Formularios de HTML
+# Capítulo II - Etiquetas contenedoras y Formularios de HTML
 <a name="top"></a>
 
 ### Tabla de contenido
@@ -31,6 +31,7 @@
 		+ [selected](#selected)
 		+ [required](#required)
 		+ [placeholder](#placeholder)
++ [*Volver al índice principal*](../) 
 
 ---
 
@@ -400,3 +401,13 @@ Interesante ¿no lo crees? Llego el momento de ver todo esto en acción. Copia y
 ---
 
 [![alt text](./images/img-up.png "subir") volver a la tabla de contenido](#top)
+
+---
+
+**Made with ❤️ by: [Javi Herrera](https://javier-herrera.com)**
+
+*Si te parece interesante este tipo de contenido, puedes agradecerme con un Follow en mis siguientes redes sociales. Lo estimaría un montón.*
+
+[![icon linkedin](../images/icon-linkedin.png)](https://www.linkedin.com/in/japsolo/)
+[![icon instagram](../images/icon-instagram.png)](https://www.instagram.com/thefullstackdevs/)
+[![icon spotify](../images/icon-spotify.png)](https://open.spotify.com/show/3J2dLuBSfzt9VVnEF8q18a)
