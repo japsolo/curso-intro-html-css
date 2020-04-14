@@ -1,5 +1,5 @@
 # Introducción a HTML y CSS
-Hola. Si llegaste hasta aquí es porque estás interesada o interesado en conocer un poco más acerca de HTML y CSS. Por ello te dejo este breve material introductorio que estoy seguro te será de gran ayuda en tu aprendizaje. ¡Aprovéchalo! Y si tienes a alguien que esté interesado en lo mismo, compártelo. Es totalmente libre y gratutito.
+Hola. Si llegaste hasta aquí es porque estás interesada o interesado en conocer un poco más acerca de HTML y CSS. Por ello te dejo este breve material introductorio que estoy seguro te será de gran ayuda en tu aprendizaje. ¡Aprovéchalo! Y si tienes a alguien que esté interesado en lo mismo, COMPÁRTELO. Es totalmente libre y gratutito.
 
 ---
 
